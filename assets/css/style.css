@@ -1,0 +1,578 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body{
+    /* background-image: url(../img/bgimg/glenn-carstens-peters-282287-unsplash.jpg); */
+
+    background-image: url(../img/osman-rana-182134-unsplash.jpg);
+
+    /* background-image: url(../img/bgimg/fabrizio-conti-723098-unsplash.jpg); */
+
+    /* background-image: url(../img/bgimg/annie-spratt-106644-unsplash.jpg); */
+    
+    /* background-image: url(../img/bgimg/photo-1504917595217-d4dc5ebe6122.jpg); */
+
+
+    background-size: 100% 100%;
+    /* opacity: 0.5; */
+    /* background-color: rgb(26, 93, 121); */
+    /* background-color: #16416e; */
+    /* background-color: rgba(17, 84, 146, 0.7);  */
+    /* background-color:#232323; */
+    /* background-repeat: no-repeat; */
+    background-attachment: fixed;
+    /* scroll-behavior: smooth; */
+}
+
+.container-fluid{
+    background-color: rgba(14, 30, 49, 0.6);
+}
+
+/* _________________ Start of nav (menu-burger) _________________ */
+.burger{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+.burger p{
+    height: 0px;
+    width: 25px;
+    border: 2px solid whitesmoke;
+    margin-top: 5px;
+    margin-bottom: 0;
+    border-radius: 5px;
+}
+
+/* _____amimation burger_____ */
+
+@keyframes zoomInOutBurger {
+    0% {transform: scale(1,1);
+    }
+    50% {transform: scale(1.4,1.4);
+        /* border: 2px solid orange; */
+        margin-top: 8px;}
+    100% {transform: scale(1,1);
+        /* border: 2px solid orangered; */
+        }
+} /*zoomInOutBurger*/
+
+.burger {
+    animation: zoomInOutBurger 5s infinite ;
+}
+
+/* _____end of amimation burger_____ */
+
+.active .first-p{
+    height: 0px;
+    width: 25px;
+    border: 2px solid red;
+    transform: rotate(45deg);
+    margin-top: 17px;
+}
+
+.active .mid-p{
+    visibility: hidden;
+}
+.active .last-p{
+    height: 0px;
+    width: 25px;
+    border: 2px solid red;
+    transform: rotate(-45deg);
+    margin-top: -12px;
+}
+
+nav{
+    margin-left: -25%;
+}
+
+.active{
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    background: #232323;
+    opacity: 0.9;
+    z-index: 2;
+    position: fixed;
+    cursor: pointer;
+} 
+
+.active li{
+    list-style: none;
+}
+
+.active a{
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
+
+.active ul{
+    padding-top: 40vh;
+}
+
+.active nav{
+    margin: 0 auto;
+}
+/* _________________ end of nav (menu-burger) _________________ */
+
+
+/* _________________ Start of click nav (menu-burger) _________________ */
+.underline {
+    display: inline;
+    position: relative;
+    overflow: hidden;
+}
+
+.underline:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: -5px;
+    background-image: linear-gradient(to bottom, red, red 50%, rgb(60, 103, 196) 50%);
+    height: 4px;
+    transition-property: left right;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.underline:hover:after,
+.underline:focus:after,
+.underline:active:after {
+    right: 0;
+}
+/* _________________ end of click nav (menu-burger) _________________ */
+
+
+/* _________________ Start of main _________________ */
+.logo{
+    text-align: center;
+}
+
+.img-logo{
+    margin-top: -5%;
+    margin-left: -6.5rem;
+    position: absolute;
+    z-index: 0;
+    /* box-shadow: 1px 2px 8px #232323;
+    background: rgba(7, 89, 241, 0.2);
+    border-radius: 50%;
+    height: 12rem;
+    width: 12rem; */
+}
+
+h1{
+    padding-top: 13vh;
+}
+
+h1, h2{
+    color: rgb(236, 132, 3);
+    font-size: 3.2em;
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Source Code Pro', monospace;
+    font-style: italic;
+    letter-spacing: 0.7rem;
+    -webkit-text-stroke: 1px white;
+    /* -webkit-filter: drop-shadow(2px 2px 10px rgb(251, 252, 244)); */
+}
+
+span{
+    font-size: 4.2rem;
+    /* color: #FF8C00;
+    -webkit-text-stroke: 1px white;
+    -webkit-filter: drop-shadow(1px 1px 18px #FF8C00); */
+}
+
+.logo .motif p{
+    text-align: center;
+}
+
+.motif{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.7em;
+    letter-spacing: 0.2rem;
+    font-style: italic;
+    color: aliceblue;
+    font-weight: bold;
+    /* -webkit-text-stroke: 1px white; */
+}
+
+.link a{
+    text-decoration: none;
+    font-size: 50px;
+    margin: 0rem 3rem;
+}
+.link img{
+    height: 50px;
+    /* width: 50px; */
+    margin-bottom: -6px;
+}
+.link a span{
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    font-size: 0.3em;
+    background: rgb(252, 157, 157);
+    border-radius: 3px;
+    padding: 2px;
+}
+.link a:hover span{
+    visibility: visible;
+    margin-left: -87px;
+    margin-top: -20px;
+
+}
+
+.link{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* _________start of competences_________ */
+h3{
+    color: rgb(236, 132, 3);
+    font-size: 3.2em;
+    font-weight: bold;
+    text-align: center;
+    /* padding: 15px 0; */
+    margin: 6rem 0 3rem;
+    font-family: 'Source Code Pro', monospace;
+    border-bottom: 4px solid aliceblue;
+    border-top: 1px solid aliceblue;
+    border-radius: 100%;
+}
+
+.competences h4{
+    color: rgb(236, 132, 3);
+    font-size: 2.3em;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0 2rem;
+    font-family: 'Source Code Pro',
+    monospace;
+    font-style: italic;
+}
+
+.competences img{
+    height: 6rem;
+    width: 6rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    /* margin: 10rem 0rem 0rem 8rem; */
+}
+
+.competences .a_venir img{
+    height: 4rem;
+    width: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.competences p{
+    color: whitesmoke;
+    visibility: hidden;
+}
+
+.competences img:hover p{
+    color: whitesmoke;
+    visibility: visible;
+    position: absolute;
+    z-index: 2;
+}
+/* ____________end of competences____________ */
+
+
+/* ____________start of Expériences____________ */
+.experiences{
+    /* border: 1px solid;  */
+    margin: 0 7rem
+}
+.experience_text{
+    /* border: 1px solid;  */
+    height: 20rem; 
+    width: 25rem; 
+    text-align: center;
+    color: aliceblue;
+    border: 4px solid white;
+    background: rgba(4, 27, 42, 0.6);
+}
+.experience_text h5{
+    margin-top: 2rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.2em;
+}
+
+.ent_name{
+    font-size: 1.2em;
+    padding-bottom: 0.8rem;
+}
+
+.experience_img{
+    /* border: 1px solid;  */
+    height: 20rem; 
+    width: 25rem; 
+    margin-left: 30rem;
+}
+.experience_img img{
+    height: 20rem; 
+    width: 25rem;
+}
+/* ____________end of Expériences____________ */
+
+
+/* ____________start of formations____________ */
+.formations{
+    /* border: 1px solid;  */
+    margin: 0 7rem
+}
+.formation_text{
+    /* border: 1px solid;  */
+    height: 20rem; 
+    width: 25rem; 
+    text-align: center;
+    color: aliceblue;
+    color: aliceblue;
+    border: 4px solid white;
+    background: rgba(4, 27, 42, 0.6);
+}
+.school{
+    font-size: 1.2em;
+    padding-bottom: 0.8rem;
+}
+.formation_text h5{
+    margin-top: 2rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.2em;
+}
+.formation_img{
+    /* border: 1px solid;  */
+    height: 20rem; 
+    width: 25rem; 
+    margin-left: 30rem;
+}
+.formation_img img{
+    height: 20rem; 
+    width: 25rem;
+}
+/* ____________end of formations____________ */
+
+
+/* ____________start of realisation____________ */
+.realisation{
+    height: 20rem; 
+    width: 20rem; 
+    margin: 0 auto;
+    /* position: absolute;
+    z-index: 1; */
+  
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.7s ease-in-out;
+    transition: 0.7s ease-in-out;
+  }
+  
+  .realisation:hover{
+    opacity: 0.6;
+    /* background-color: rgba(255, 0, 0, 0.3); */
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  
+  .plus{
+    height: 2rem;
+    width: 2rem;
+    /* border: 1px solid blue; */
+    position: absolute;
+    z-index: 2;
+    margin-top: 8rem;
+    margin-left: 9rem;
+    opacity: 0;
+  
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+    -webkit-transition: .7s ease-in-out;
+    transition: .7s ease-in-out;
+  }
+  
+  .realisation:hover .plus{
+    height: 2rem;
+    width: 2rem;
+    /* border: 1px solid blue; */
+    position: absolute;
+    z-index: 2;
+    margin-top: 8rem;
+    margin-left: 9rem;
+    opacity: 1;
+  
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  
+  .horizontal2{
+    height: 4px;
+    width: 100%;
+    background: red;
+    position: absolute;
+    z-index: 2;
+    margin-top: 40%;
+  }
+  
+  .vertical2{
+    height: 100%;
+    width: 4px;
+    background: red;
+    position: absolute;
+    z-index: 2;
+    margin-left: 47%;
+  }
+  
+  .realisation_img img{
+    height: 20rem; 
+    width: 20rem;
+  }
+
+
+ /*____start of filip realisation2____*/
+.realisation2, .devant, .arriere{
+    width: 20rem;
+    height: 20rem;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .site {
+    transition: 1s;
+    position: relative;
+    transform-style: preserve-3d;
+  }
+  
+  .realisation2:hover .site {
+    transform: rotateY(180deg);
+    transition-duration: 2s;
+  }
+  
+  .devant, .arriere {
+    backface-visibility: hidden;
+    position: absolute;
+  }
+  .devant img{
+    height: 20rem;
+    width: 20rem;
+  }
+  
+  .arriere {
+    transform: rotateY(180deg);
+    background: rgb(34, 122, 230);
+    height: 20rem;
+    width: 20rem;
+  }
+  .arriere img{
+    height: 20rem;
+    width: 20rem;
+  }
+  
+  .realisation2 a {
+    display: block;
+    width: 55px;
+    height: 45px;
+    line-height: 42px;
+    background: rgb(143, 181, 248);
+    border-radius: 15px;
+    border: 1px solid white;
+    margin: 8.5rem 8.5rem;
+    text-align: center;
+    font-size: 5em;
+    color: aliceblue;
+  }
+  
+  .realisation2 a:hover {
+    background: orangered;
+    color: black;
+    text-decoration: none;
+  }
+  /*____end of filip realisation2____*/
+
+/* ____________end of realisation____________ */
+
+
+
+/* ________________________ end of main ________________________ */
+
+
+/* ______________start of contact _____________ */
+label{
+    color: aliceblue;
+}
+
+#footer .alert-success {
+    margin: 0 auto;
+    width: 81%;
+}
+#footer span{
+    color: red;
+    font-size: 1em;
+}
+#footer input{
+    /* color: whitesmoke; */
+    background: rgba(23, 79, 126, 0.5);
+}
+
+textarea{
+height: 20vh;
+width: 100%;
+border-radius: 10px;
+/* margin-left: 8%; */
+line-height: 6vh;
+margin-bottom: 1rem;
+/* text-align: center; */
+background: rgba(36, 96, 146, 0.5);
+}
+
+.label_msg{
+    margin-left: 8%;
+}
+/* _________________ end of contact _________________ */
+
+
+/* _______________ start of copyRight _______________ */
+.copyRight{
+    height: 70px;
+    background: rgba(14, 30, 49, 0.6);
+    margin: 0px;
+}
+.copyRight p{
+    color: white;
+    line-height: 70px;
+    text-align: center;
+}
+/* _______________ end of copyRight _______________ */
